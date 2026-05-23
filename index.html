@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fin House ฟินเฮาส์ - ร้านอาหารและพื้นที่นั่งชิล สุราษฎร์ธานี</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif, 'Helvetica Neue', Arial, sans-serif;
+        }
+        body {
+            background-color: #0b0b0b;
+            color: #e5e5e5;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #141414;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 4px solid #f39c12;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        header h1 {
+            color: #f39c12;
+            font-size: 3.2rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            font-weight: 700;
+        }
+        header p {
+            color: #fff;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+        }
+        nav {
+            background-color: #1a1a1a;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #2d2d2d;
+        }
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 5px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #f39c12;
+            color: #000;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+        section {
+            background-color: #141414;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0,0,0,0.5);
+            border: 1px solid #222;
+        }
+        h2 {
+            color: #f39c12;
+            margin-bottom: 25px;
+            border-left: 5px solid #f39c12;
+            padding-left: 15px;
+            font-size: 1.8rem;
+        }
+        h3 {
+            color: #fff;
+            margin: 30px 0 15px 0;
+            font-size: 1.3rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 5px;
+        }
+        .section-img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.4);
+        }
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        .menu-item {
+            background-color: #1d1d1d;
+            padding: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px solid #2a2a2a;
+            transition: transform 0.2s;
+        }
+        .menu-item:hover {
+            transform: translateY(-2px);
+            border-color: #f39c12;
+        }
+        .menu-name {
+            font-weight: 500;
+        }
+        .menu-price {
+            color: #f39c12;
+            font-weight: bold;
+            font-size: 1.1rem;
+            white-space: nowrap;
+        }
+        .contact-box {
+            background-color: #1d1d1d;
+            padding: 25px;
+            border-radius: 8px;
+            border-left: 4px solid #f39c12;
+            margin-top: 20px;
+        }
+        .contact-box p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        .btn-container {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+        .btn-primary {
+            background-color: #f39c12;
+            color: #000;
+        }
+        .btn-primary:hover {
+            background-color: #e67e22;
+        }
+        .btn-secondary {
+            background-color: #333;
+            color: #fff;
+            border: 1px solid #444;
+        }
+        .btn-secondary:hover {
+            background-color: #444;
+        }
+        .info-list {
+            list-style: none;
+        }
+        .info-list li {
+            margin-bottom: 12px;
+            font-size: 1.1rem;
+        }
+        .highlight {
+            color: #f39c12;
+            font-weight: bold;
+        }
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: #141414;
+            color: #777;
+            font-size: 0.9rem;
+            margin-top: 60px;
+            border-top: 1px solid #222;
+        }
+        @media (max-width: 600px) {
+            header h1 { font-size: 2.2rem; }
+            nav { position: static; }
+            section { padding: 20px; }
+            .section-img { height: 180px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Fin House ฟินเฮาส์</h1>
+        <p>ศูนย์รวมความฟิน อาหารอร่อย บรรยากาศนั่งชิลเป็นกันเอง ย่านพ่อขุนทะเล สุราษฎร์ธานี</p>
+    </header>
+
+    <nav>
+        <a href="#about">เกี่ยวกับเรา</a>
+        <a href="#menu-food">เมนูอาหาร</a>
+        <a href="#menu-drinks">เครื่องดื่ม</a>
+        <a href="#hours">เวลาทำการ</a>
+        <a href="#contact">ติดต่อ & ที่ตั้ง</a>
+    </nav>
+
+    <div class="container">
+        <section id="about">
+            <h2>เกี่ยวกับร้าน</h2>
+            <img src="https://images.unsplash.com/photo-1543007630-9710e4a00a20?auto=format&fit=crop&w=1000&q=80" alt="บรรยากาศร้านนั่งชิล" class="section-img">
+            <p>ยินดีต้อนรับสู่ <strong>"Fin House ฟินเฮาส์"</strong> ร้านอาหารและพื้นที่พักผ่อนหย่อนใจที่ดีที่สุดสำหรับคุณในสุราษฎร์ธานี เราตั้งใจสร้างสรรค์บรรยากาศที่อบอุ่น เป็นกันเอง เหมาะสำหรับการมานั่งทานข้าวกับครอบครัว หรือสังสรรค์สุดชิลกับกลุ่มเพื่อนหลังเลิกงาน พร้อมเสิร์ฟเมนูอาหารที่หลากหลาย ตั้งแต่จานเดี่ยวรสเด็ด กับแกล้มสุดฟิน ไปจนถึงเมนูต้มยำทำแกงรสแซ่บจัดจ้าน คัดสรรวัตถุดิบสดใหม่เพื่อมอบความสุขในทุกๆ มื้อของคุณ</p>
+        </section>
+
+        <section id="menu-food">
+            <h2>เมนูอาหาร (Food Menu)</h2>
+            
+            <h3>เมนูแนะนำ & กับแกล้ม</h3>
+            <img src="https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?auto=format&fit=crop&w=1000&q=80" alt="เมนูกับแกล้มของทอด" class="section-img">
+            <div class="menu-grid">
+                <div class="menu-item"><span class="menu-name">หมูมะนาว</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ลาบหมู</span><span class="menu-price">69 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">หมูแดดเดียว</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">เนื้อแดดเดียว</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">มาม่าผัดขี้เมา</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ปลาหมึกผัดไข่เค็ม</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">สามชั้นทอด / คั่วเกลือ</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">กุ้งอบวุ้นเส้น</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">คอหมูย่าง</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ไส้อ่อนย่าง</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">คางหมึกทอดกระเทียม</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ปีกไก่ทอด</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ยำเส้นแก้ว</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ยำม่วงปลาจิ้งจั้ง</span><span class="menu-price">79 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">เอ็นไก่ทอด</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ปูอัดเฟรนฟราย</span><span class="menu-price">89 บาท</span></div>
+            </div>
+
+            <h3>เมนูส้มตำ & ยำแซ่บ</h3>
+            <img src="https://images.unsplash.com/photo-1626132647523-66f5bf380027?auto=format&fit=crop&w=1000&q=80" alt="เมนูส้มตำยำแซ่บ" class="section-img">
+            <div class="menu-grid">
+                <div class="menu-item"><span class="menu-name">ส้มตำไทย</span><span class="menu-price">50 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ส้มตำปูปลาร้า</span><span class="menu-price">50 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ตำข้าวโพดไข่เค็ม</span><span class="menu-price">60 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ตำแตงปูปลาร้า</span><span class="menu-price">50 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ตำถั่วหมูยอ</span><span class="menu-price">60 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ตำซั่วขนมจีน</span><span class="menu-price">60 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ตำเส้นเล็ก</span><span class="menu-price">60 บาท</span></div>
+            </div>
+
+            <h3>อาหารจานเดียว</h3>
+            <div class="menu-grid">
+                <div class="menu-item"><span class="menu-name">ข้าวผัด</span><span class="menu-price">69 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวผัดกระเพรา</span><span class="menu-price">69 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวคั่วกลิ้งหมู</span><span class="menu-price">69 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวคั่วกลิ้งเนื้อ</span><span class="menu-price">79 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวผัดพริก</span><span class="menu-price">69 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวไข่เจียว</span><span class="menu-price">30 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวไก่กระเทียม</span><span class="menu-price">69 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวหมูทอด</span><span class="menu-price">69 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวผัดกุ้ง</span><span class="menu-price">69 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวปลาแกะ</span><span class="menu-price">69 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวคะน้าปลากระป๋อง</span><span class="menu-price">69 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ข้าวผัดเครื่องแกง</span><span class="menu-price">69 บาท</span></div>
+            </div>
+
+            <h3>เมนูต้มแซ่บหม้อร้อน</h3>
+            <div class="menu-grid">
+                <div class="menu-item"><span class="menu-name">ต้มซุปเปอร์ตีนไก่</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ต้มยำกุ้ง</span><span class="menu-price">99 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ต้มแซ่บกระดูกอ่อน</span><span class="menu-price">89 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">ต้มจืดเต้าหู้+หมูสับ+ผัก</span><span class="menu-price">99 บาท</span></div>
+            </div>
+        </section>
+
+        <section id="menu-drinks">
+            <h2>เครื่องดื่ม (Drinks)</h2>
+            <img src="https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1000&q=80" alt="เครื่องดื่มเย็นชื่นใจ" class="section-img">
+            <div class="menu-grid">
+                <div class="menu-item"><span class="menu-name">เบียร์สิงห์</span><span class="menu-price">80 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">เบียร์ช้าง</span><span class="menu-price">75 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">เบียร์ลีโอ</span><span class="menu-price">75 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">โซดา</span><span class="menu-price">17 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">บุฟเฟต์น้ำแข็ง</span><span class="menu-price">39 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">โค้กเล็ก</span><span class="menu-price">15 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">โค้กใหญ่</span><span class="menu-price">40 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">น้ำเปล่าเล็ก</span><span class="menu-price">10 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">น้ำแข็ง</span><span class="menu-price">15 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">น้ำอัดลม</span><span class="menu-price">15 บาท</span></div>
+                <div class="menu-item"><span class="menu-name">น้ำเปล่าใหญ่</span><span class="menu-price">20 บาท</span></div>
+            </div>
+        </section>
+
+        <section id="hours">
+            <h2>เวลาทำการ</h2>
+            <ul class="info-list">
+                <li>⏰ <strong>เปิดให้บริการทุกวัน:</strong> <span class="highlight">18:00 น. - 00:00 น.</span></li>
+                <li style="color: #ff6b6b; font-size: 0.95rem;">*หมายเหตุ: เวลาทำการอาจมีการอัปเดตในวันหยุดเทศกาล สามารถโทรเช็กก่อนเข้ามาฟินกันได้ครับ</li>
+            </ul>
+        </section>
+
+        <section id="contact">
+            <h2>ตำแหน่งร้าน & การติดต่อ</h2>
+            <div class="contact-box">
+                <p><strong>📍 ที่ตั้งร้าน:</strong> ถนนพ่อขุนทะเล ตำบลมะขามเตี้ย อำเภอเมือง สุราษฎร์ธานี 84000 (พิกัดย่านพ่อขุนทะเล)</p>
+                <p><strong>📞 เบอร์โทรศัพท์สำหรับจองโต๊ะ:</strong> <span class="highlight">094-296-2932</span></p>
+                
+                <div class="btn-container">
+                    <a href="tel:0942962932" class="btn btn-primary">📞 โทรติดต่อร้าน</a>
+                    <a href="#" class="btn btn-secondary">🗺️ ดูแผนที่บน Google Maps</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Fin House ฟินเฮาส์. รูปภาพประกอบจาก Unsplash (เพื่อความสวยงามในการนำเสนอโครงสร้างเว็บไซต์)</p>
+    </footer>
+
+</body>
+</html>
