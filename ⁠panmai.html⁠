@@ -1,1 +1,276 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panmai ปั่นมั้ย - Cafe & Drinks</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+        body {
+            background-color: #fcf9f5;
+            color: #4a3b32;
+            line-height: 1.6;
+        }
+        /* Header ดีไซน์มินิมอลแบบคาเฟ่เกาหลี */
+        header {
+            background-color: #ffffff;
+            padding: 50px 20px;
+            text-align: center;
+            border-bottom: 1px solid #f0e6df;
+            box-shadow: 0 2px 10px rgba(74, 59, 50, 0.05);
+        }
+        .logo-area {
+            background-color: #e67e22;
+            color: white;
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            box-shadow: 0 4px 10px rgba(230, 126, 34, 0.2);
+        }
+        header h1 {
+            color: #2c1d11;
+            font-size: 2.3rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+        header .tagline {
+            color: #8e7a6c;
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 30px 16px;
+        }
+        .section-title {
+            color: #2c1d11;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 30px 0 15px 0;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background-color: #e67e22;
+            border-radius: 2px;
+        }
+        /* เมนูการ์ดสไตล์โมเดิร์น */
+        .menu-card {
+            background-color: #ffffff;
+            border-radius: 16px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 24px rgba(74, 59, 50, 0.06);
+            border: 1px solid rgba(240, 230, 223, 0.5);
+        }
+        .menu-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 14px 0;
+            border-bottom: 1px dashed #f0e6df;
+        }
+        .menu-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .menu-item:first-child {
+            padding-top: 0;
+        }
+        .item-info {
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+        }
+        .item-name {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #2c1d11;
+        }
+        .item-sub {
+            font-size: 0.85rem;
+            color: #a39081;
+        }
+        .item-price {
+            color: #e67e22;
+            font-weight: 700;
+            font-size: 1.2rem;
+            background-color: #fdf5ee;
+            padding: 4px 12px;
+            border-radius: 30px;
+        }
+        /* กล่องข้อมูลติดต่อและการเชื่อมต่อระบบ */
+        .contact-card {
+            background: linear-gradient(135deg, #3a2512 0%, #211307 100%);
+            color: #ffffff;
+            border-radius: 20px;
+            padding: 30px 24px;
+            margin-top: 40px;
+            box-shadow: 0 12px 30px rgba(33, 19, 7, 0.25);
+            text-align: center;
+        }
+        .contact-card h3 {
+            color: #f39c12;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        .contact-info {
+            font-size: 0.95rem;
+            color: #ddc7b5;
+            margin-bottom: 25px;
+        }
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+        /* ปุ่มกดดีไซน์หรู */
+        .btn-group {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            padding: 16px;
+            border-radius: 12px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+        .btn-call {
+            background-color: #e67e22;
+            color: white;
+            box-shadow: 0 6px 15px rgba(230, 126, 34, 0.3);
+        }
+        .btn-call:hover {
+            background-color: #d35400;
+            transform: translateY(-1px);
+        }
+        .btn-maps {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .btn-maps:hover {
+            background-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-1px);
+        }
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            color: #a39081;
+            font-size: 0.85rem;
+            background-color: #f5ede6;
+            margin-top: 60px;
+            border-top: 1px solid #f0e6df;
+        }
+    </style>
+</head>
+<body>
 
+    <header>
+        <div class="logo-area">PANMAI PUNMAI</div>
+        <h1>Panmai ปั่นมั้ย</h1>
+        <p class="tagline">🥤 เมนูเครื่องดื่มปั่นและอาหารทานเล่นแสนอร่อย</p>
+    </header>
+
+    <div class="container">
+
+        <div class="section-title">🥤 Signature Drinks</div>
+        <div class="menu-card">
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">ชาไทยวิปครีมชีสพ่นไฟ</span>
+                    <span class="item-sub">รสชาติเข้มข้น หอมมัน กลมกล่อม</span>
+                </div>
+                <span class="item-price">65.-</span>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">นมสดสตรอว์เบอร์รี่โยเกิร์ตปั่น</span>
+                    <span class="item-sub">ใช้ผลไม้แท้ เปรี้ยวหวานลงตัว</span>
+                </div>
+                <span class="item-price">60.-</span>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">โกโก้ภูเขาไฟดับเบิ้ลช็อกปั่น</span>
+                    <span class="item-sub">เข้มข้นสะใจสายช็อกโกแลตเลิฟเวอร์</span>
+                </div>
+                <span class="item-price">55.-</span>
+            </div>
+        </div>
+
+        <div class="section-title">🍟 Appetizers & Food</div>
+        <div class="menu-card">
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">ยำวุ้นเส้นรวมมิตรทะเลแซ่บ</span>
+                    <span class="item-sub">กุ้งปลาหมึกสดๆ น้ำยำมะนาวแท้</span>
+                </div>
+                <span class="item-price">89.-</span>
+            </div>
+            
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">เบอร์เกอร์ไก่กรอบสไปซี่</span>
+                    <span class="item-sub">ไก่ทอดชิ้นใหญ่ ซอสสูตรพิเศษร้าน</span>
+                </div>
+                <span class="item-price">69.-</span>
+            </div>
+
+            <div class="menu-item">
+                <div class="item-info">
+                    <span class="item-name">เฟรนช์ฟรายส์ชีสเยิ้ม</span>
+                    <span class="item-sub">ทอดใหม่ร้อนๆ ราดชีสซอสสะใจ</span>
+                </div>
+                <span class="item-price">49.-</span>
+            </div>
+        </div>
+
+        <div class="contact-card">
+            <h3>ORDER & LOCATION</h3>
+            <div class="contact-info">
+                <p>📍 พิกัดร้าน: อยู่ตรงข้ามโรงเรียน / แหล่งชุมชน (คลิกแผนที่ด้านล่าง)</p>
+                <p>⏰ เวลาเปิด-ปิด: 10:00 น. - 22:00 น. (เปิดบริการทุกวัน)</p>
+            </div>
+            
+            <div class="btn-group">
+                <a href="tel:0800000000" class="btn btn-call">📞 โทรสั่งออเดอร์ล่วงหน้า</a>
+                
+                <a href="https://maps.app.goo.gl/9R686vun6W3RskvC8" class="btn btn-maps" target="_blank">📍 นำทางด้วย Google Maps</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>© 2026 Panmai ปั่นมั้ย. All Rights Reserved.</p>
+        <p style="margin-top: 5px; color: #bca899;">Designed with heart for your best experience</p>
+    </footer>
+
+</body>
+</html>
